@@ -15,14 +15,14 @@ jobs:
       - name: connection
         uses: appleboy/ssh-action@v1.2.0
       
-with:
-   host: ${{secrets.IP}}
-   username: ${{secrets.USERNAME}}
-  password: ${{secrets.PASSWORD}}
+        with:
+           host: ${{secrets.IP}}
+           username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
         
-script: |
-  cd /home/palak/seedly_bcknd
-  git pull origin main 
-  npm i
-  npm start
-  pm2 start index.js --name "backend"
+          script: |
+              cd /home/palak/seedly_bcknd
+              git pull origin main 
+              npm i
+              npm start
+              pm2 start index.js --name "backend"
